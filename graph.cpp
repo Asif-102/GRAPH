@@ -30,6 +30,32 @@ public:
             cout << " (" << (*i).first << ", " << (*i).second << ")";
         }
     }
+
+    void BFS(int source)
+    {
+        vector<bool> visited(V, false);
+        queue<int> Q;
+
+        visited[source] = true;
+        Q.push(source);
+
+        while (!Q.empty())
+        {
+            int u = Q.front();
+            cout << u << " ";
+            Q.pop();
+
+            for (auto element : adj[u])
+            {
+                int v = element.first;
+                if (visited[v] != true)
+                {
+                    visited[v] = true;
+                    Q.push(v);
+                }
+            }
+        }
+    }
 };
 
 int main(void)
@@ -50,6 +76,10 @@ int main(void)
         g.printNeighbour(i);
         cout << endl;
     }
+
+    cout << "\n\n";
+
+    g.BFS(0);
 }
 
 /*
