@@ -2,7 +2,7 @@
 using namespace std;
 
 vector<int> v[101];
-bool visit[1001];
+bool visit[101];
 
 void bfs(int src)
 {
