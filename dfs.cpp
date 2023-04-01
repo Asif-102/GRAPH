@@ -36,6 +36,8 @@ int main(void)
 
 /*
 
+sample input
+-------------------
 7 7
 1 2
 1 6
